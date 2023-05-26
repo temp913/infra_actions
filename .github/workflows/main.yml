@@ -66,10 +66,10 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} #jj
+        passphrase: ${{ secrets.PASSPHRASE }} 
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull temp913/infra_actions
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 <имя-пользователя>/<имя-репозитория>
+          sudo docker run --rm -d -p 5000:5000 temp913/infra_actions
